@@ -118,6 +118,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"ejercicios/typescript/index.ts":[function(require,module,exports) {
+console.log("Hello TypeScript");
 // Boolean
 var muted = true;
 muted = false;
@@ -155,6 +156,29 @@ comodin = {
 var someObject = {
   type: "Wildcard"
 };
+// Funciones
+function add(a, b) {
+  return a + b;
+}
+var sum = add(4, 6);
+function createAdder(a) {
+  return function (b) {
+    return b + a;
+  };
+}
+var addFour = createAdder(4);
+var fourPlus6 = addFour(6);
+// function fullName(firstName: string, lastName?: string): string {
+//   return `${firstName} ${lastName}`;
+// }
+function fullName(firstName, lastName) {
+  if (lastName === void 0) {
+    lastName = "Smith";
+  }
+  return "".concat(firstName, " ").concat(lastName);
+}
+var richard = fullName("Agente");
+console.log(richard);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
