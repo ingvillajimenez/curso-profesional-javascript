@@ -10,7 +10,7 @@ class AutoPause {
     this.handleVisibilityChange = this.handleVisibilityChange.bind(this);
   }
 
-  run(player) {
+  run(player: MediaPlayer) {
     this.player = player;
 
     const observer = new IntersectionObserver(this.handleIntersection, {
